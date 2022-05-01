@@ -1,3 +1,12 @@
+# Electron Model Viewer
+This electron.js app uses three.js and Redux to explore 3D models.
+
+TODO:
+- [ ] Hook up HUD controls
+- [ ] Maybe a couple other models to preview
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

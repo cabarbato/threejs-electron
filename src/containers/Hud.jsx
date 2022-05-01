@@ -3,29 +3,44 @@ import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import NavigationIcon from "@mui/icons-material/Navigation";
+import styled from "@emotion/styled";
 
-import "./Hud.scss";
+const Nav = styled.nav`
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  `
 
-function Nav() {
+function Hud() {
+  const margin = 1;
   return (
-    <Box 
-    component="nav"
-    className="Nav">
-      <Fab color="primary" aria-label="add">
-        <AddIcon />
-      </Fab>
-      <Fab color="secondary" aria-label="edit">
-        <EditIcon />
-      </Fab>
-      <Fab variant="extended">
-        <NavigationIcon sx={{ mr: 1 }} />
-        Navigate
-      </Fab>
-      <Fab disabled aria-label="like">
-        <FavoriteIcon />
-      </Fab>
-    </Box>
+    <Nav>
+      <Box
+        className="hud"
+        m={margin}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        width={`calc(100% - ${margin}rem)`}
+      >
+        <Fab color="primary" aria-label="add" sx={{margin}}>
+          <AddIcon />
+        </Fab>
+        <Fab color="secondary" aria-label="edit" sx={{margin}}>
+          <EditIcon />
+        </Fab>
+        <Fab variant="extended" sx={{margin}}>
+          <NavigationIcon sx={{ mr: 1 }} />
+          Navigate
+        </Fab>
+        <Fab disabled aria-label="like" sx={{margin}}>
+          <FavoriteIcon />
+        </Fab>
+      </Box>
+    </Nav>
   );
 }
 
-export default Nav;
+export default Hud;

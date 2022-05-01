@@ -1,18 +1,30 @@
-import { Canvas } from "react-three-fiber";
-import Box from '../components/Box';
-import './Scene.scss';
+import styled from "@emotion/styled";
+import { Canvas } from "@react-three/fiber";
+import Object from '../components/Object';
+import { connect } from "react-redux";
 
-function Scene() {
+const mapStateToProps = state => ({
+  scene: state.scene
+});
+
+const Main = styled.main`
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+`
+
+const Scene = ({scene}) => {
   return (
-    <main className="Scene">
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <Box position={[-1.2, 0, 0]} />
-    </Canvas>
-    </main>
+    <Main className="Scene">
+      {scene ? <Canvas>
+        <ambientLight intensity={0.5} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+        <pointLight position={[-10, -10, -10]} />
+        <Object {...scene} />
+      </Canvas> : null}
+    </Main>
   );
 }
 
-export default Scene;
+export default connect(mapStateToProps)(Scene);
