@@ -1,9 +1,13 @@
 # Electron Model Viewer
 This electron.js app uses three.js and Redux to explore 3D models.
 
-TODO:
+### Progress: 
+![15%](https://progress-bar.dev/15/?width=400)
+
+### Working on:
 - [ ] Hook up HUD controls
 - [ ] Maybe a couple other models to preview
+- [ ] Lighting
 
 ---
 
